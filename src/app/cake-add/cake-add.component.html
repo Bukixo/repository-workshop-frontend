@@ -1,0 +1,28 @@
+<p>cake-add works!</p>
+<div class="card">
+    <div class="card-body">
+        <form [formGroup]="angForm" novalidate>
+            <div class="form-group">
+                <label class="col-md-4">Cake Flavour</label>
+                    <input type="text" class="form-control" formControlName="CakeFlavour" #CakeFlavour/>
+            </div>
+            <div *ngIf="angForm.controls['CakeFlavour'].invalid && (angForm.controls['CakeFlavour'].dirty || angForm.controls['CakeFlavour'].touched)" class="alert alert-danger">
+                <div *ngIf="angForm.controls['CakeFlavour'].errors.required">
+                    Cake Flavour is required
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-md-4">Cake Tier</label>
+                    <input type="text" class="form-control" formControlName="CakeTier" #CakeTier/>
+            </div>
+            <div *ngIf="angForm.controls['CakeTier'].invalid && (angForm.controls['CakeTier'].dirty || angForm.controls['CakeTier'].touched)" class="alert alert-danger">
+                <div *ngIf="angForm.controls['CakeTier'].errors.required">
+                    Cake Tier is required
+                </div>
+            </div>
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary" [disabled]="angForm.pristine || angForm.invalid">Create Cake</button>
+            </div>
+        </form>
+    </div>
+</div>
