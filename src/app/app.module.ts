@@ -9,6 +9,7 @@ import { CakeEditComponent } from './cake-edit/cake-edit.component';
 import { SlimLoadingBarModule } from 'ng2-slim-loading-bar';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { CakeService } from './cake.service';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,7 @@ import { HttpClientModule } from '@angular/common/http';
     ReactiveFormsModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [ CakeService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

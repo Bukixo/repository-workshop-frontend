@@ -21,7 +21,7 @@
                 </div>
             </div>
             <div class="form-group">
-                <button type="submit" class="btn btn-primary" [disabled]="angForm.pristine || angForm.invalid">Create Cake</button>
+                <button type="submit" class="btn btn-primary" [disabled]="angForm.pristine || angForm.invalid" (click) = "addCake(CakeFlavour.value, CakeTier.value)">Create Cake</button>
             </div>
         </form>
     </div>
