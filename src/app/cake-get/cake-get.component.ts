@@ -16,6 +16,7 @@ export class CakeGetComponent implements OnInit {
     this.cakeService
     .getCakes()
     .subscribe((data: Cake[]) => {
+      console.log(data);
       this.cakes = data;
     });
   }

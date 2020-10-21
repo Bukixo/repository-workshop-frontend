@@ -17,12 +17,13 @@ export class CakeAddComponent implements OnInit {
   public createForm() {
     this.angForm = this.fb.group({
       CakeFlavour: ['', Validators.required],
-      CakeTier: ['', Validators.required]
+      CakeTier: ['', Validators.required],
+      CakeImage: ['', Validators.required]
     });
   }
 
-  addCake(CakeFlavour, CakeTier) {
-    this.cakeService.addCake(CakeFlavour, CakeTier);
+  addCake(CakeFlavour, CakeTier, CakeImage) {
+    this.cakeService.addCake(CakeFlavour, CakeTier, CakeImage);
     this.router.navigate(['cakes']);
   }
 

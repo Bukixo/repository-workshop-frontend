@@ -5,17 +5,18 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class CakeService {
-  uri = 'https://my-json-server.typicode.com/Bukixo/cakeServer/cakes';
+  uri = 'http://localhost:4000/cakes';
   constructor(private http: HttpClient) { }
 
   getCakes() {
     return this.http.get(`${this.uri}`);
   }
 
-  addCake(CakeFlavour, CakeTier) {
+  addCake(CakeFlavour, CakeTier, CakeImage) {
     const obj = {
       CakeFlavour,
-      CakeTier
+      CakeTier,
+      CakeImage
     };
     console.log(obj);
     this.http.post(`${this.uri}/add`, obj)
