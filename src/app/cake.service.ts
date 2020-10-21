@@ -19,7 +19,27 @@ export class CakeService {
       CakeImage
     };
     console.log(obj);
-    this.http.post(`${this.uri}/add`, obj)
-    .subscribe(res => console.log('done'));
+    this
+      .http
+      .post(`${this.uri}/add`, obj)
+      .subscribe(res => console.log('done'));
+  }
+
+  editCake(id) {
+    return this
+      .http
+      .get(`${this.uri}/edit/${id}`);
+  }
+
+  updateCake(CakeFlavour, CakeImage, CakeTier, id) {
+    const obj = {
+      CakeFlavour,
+      CakeImage,
+      CakeTier
+    };
+    this
+      .http
+      .post(`${this.uri}/update/${id}`, obj)
+      .subscribe(res => console.log('Done'));
   }
 }
