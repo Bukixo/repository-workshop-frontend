@@ -42,4 +42,10 @@ export class CakeService {
       .post(`${this.uri}/update/${id}`, obj)
       .subscribe(res => console.log('Done'));
   }
+
+  deleteCake(id) {
+    return this
+      .http
+      .get(`${this.uri}/delete/${id}`);
+  }
 }
